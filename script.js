@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
         var relativePath = new URL(href, window.location.origin).pathname;
         
         if (relativePath === currentPage) {
-            const currentPageName = currentPage.replace("/", "").replace(".html","");
+            let currentPageName = currentPage.replace("/", "").replace(".html","");
+            if (currentPageName === 'index') {
+                currentPageName = 'home';
+            }
             const image = document.querySelector(`#${currentPageName}`);
             const anchor = image?.parentElement.parentElement.querySelector('a');
             const div = link.parentElement.querySelector('div');
