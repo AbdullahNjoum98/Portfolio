@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         if (relativePath === currentPage) {
             let currentPageName = currentPage.replace("/", "").replace(".html","");
-            if (currentPageName === 'index') {
+            if (currentPageName === 'index' || currentPageName === '') {
                 currentPageName = 'home';
             }
             const image = document.querySelector(`#${currentPageName}`);
